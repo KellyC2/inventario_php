@@ -49,8 +49,19 @@ function limpiar_cadena($cadena){
     return $cadena;
 }
 
-$texto="<script> Hola Mundo</script>";
-echo limpiar_cadena($texto);
+#Funcion renombrar fotos
+function renombrar_fotos($nombre){
+    $nombre=str_replace(" ","_", $nombre);
+    $nombre = str_ireplace("/", "_", $nombre);
+    $nombre = str_ireplace("#", "_", $nombre);
+    $nombre = str_ireplace("-", "_", $nombre);
+    $nombre = str_ireplace("$", "_", $nombre);
+    $nombre = str_ireplace(".", "_", $nombre);
+    $nombre = str_ireplace(",", "_", $nombre);
+    $nombre = $nombre . "_" . rand(0, 100);
+    return $nombre;
+}
+
 
 
 ?>
