@@ -2,7 +2,7 @@
 # Conexión a la base de datos
 function conexion()
 {
-    $config = include('config.php');
+    $config = include('../config.php');
     $dsn = "mysql:host={$config['db_host']};dbname={$config['db_name']}";
     $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
     return $pdo;
