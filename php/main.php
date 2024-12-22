@@ -2,7 +2,13 @@
 # Conexión a la base de datos
 function conexion()
 {
-    $config = include('../config.php');
+    // Usa la ruta absoluta para incluir config.php
+    $config = include(__DIR__ . '/../config.php');
+
+    if ($config === false) {
+        die("Error al cargar la configuración de la base de datos.");
+    }
+
     $dsn = "mysql:host={$config['db_host']};dbname={$config['db_name']}";
     $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
     return $pdo;

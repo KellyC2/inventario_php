@@ -47,7 +47,7 @@ if (Verificar_datos("[a-zA-Z0-9]{4,20}", $usuario)) {
     echo '
         <div class="notification is-danger is-light">
             <strong>¡Ocurrio un error inesperado!</strong><br>
-            El USUARIO no coincide con el fromato solicitado
+            El USUARIO no coincide con el formato solicitado
         </div>
     
     ';
@@ -57,7 +57,7 @@ if (Verificar_datos("[a-zA-Z0-9$@.-]{7,100}", $clave1) || Verificar_datos("[a-zA
     echo '
         <div class="notification is-danger is-light">
             <strong>¡Ocurrio un error inesperado!</strong><br>
-            Las CLAVES no coincide con el fromato solicitado
+            Las CLAVES no coincide con el formato solicitado
         </div>
     
     ';
