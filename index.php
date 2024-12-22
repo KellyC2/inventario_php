@@ -15,6 +15,15 @@
         }
 
         if(is_file("./vistas/".$_GET['vista'].".php") && $_GET['vista'] != "login" &&  $_GET['vista'] != "404"){
+            
+            #Cerrar session
+            if( (!isset($_SESSION['id'])|| $_SESSION['id']=="") || (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == "") ){
+                include "./vistas/logout.php";
+                exit();
+            }
+            
+            
+            
             include "./inc/navbar.php";
             include "./vistas/".$_GET['vista'].".php";
             include "./inc/script.php";
